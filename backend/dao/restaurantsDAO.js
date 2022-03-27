@@ -5,7 +5,7 @@ let restaurants;
 export default class RestaurantsDAO {
 	static async injectDB(conn) {
 		if (restaurants) {
-			return;
+			return; // return if restaurants ald exists
 		}
 		try {
 			restaurants = await conn.db(process.env.RESTREVIEWS_NS).collection('restaurants');
